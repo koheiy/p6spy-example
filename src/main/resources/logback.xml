@@ -1,0 +1,22 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{10} %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{10} %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="SPY" class="com.p6spy.engine.spy.appender.FileLogger" >
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="TRACE">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
